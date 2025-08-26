@@ -95,93 +95,16 @@ MARKET OPPORTUNITY:
 The AI market for SMEs is experiencing explosive growth: $8.75B (2024) growing to $49.11B (2032) - 461% growth. 85% of SMEs haven't adopted AI yet, creating massive opportunity.`;
 
 document.addEventListener('DOMContentLoaded', function() {
-    initializeChart();
     populateServices();
     initializeSmoothScrolling();
     initializeFadeInEffects();
     initializeContactForm();
     initializeChatbot();
     initializeAIConsultation();
+    initializeMobileMenu();
 });
 
-function initializeChart() {
-    const ctx = document.getElementById('marketChart').getContext('2d');
-    
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: marketData.labels,
-            datasets: [{
-                label: 'Market Size (USD Billions)',
-                data: marketData.values,
-                backgroundColor: [
-                    'rgba(220, 38, 38, 0.8)',
-                    'rgba(14, 165, 233, 0.8)',
-                    'rgba(0, 0, 0, 0.8)',
-                    'rgba(220, 38, 38, 0.8)',
-                    'rgba(14, 165, 233, 0.8)'
-                ],
-                borderColor: [
-                    'rgba(220, 38, 38, 1)',
-                    'rgba(14, 165, 233, 1)',
-                    'rgba(0, 0, 0, 1)',
-                    'rgba(220, 38, 38, 1)',
-                    'rgba(14, 165, 233, 1)'
-                ],
-                borderWidth: 2,
-                borderRadius: 8,
-                borderSkipped: false,
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    display: false
-                },
-                tooltip: {
-                    backgroundColor: 'rgba(0, 0, 0, 0.9)',
-                    titleColor: '#ffffff',
-                    bodyColor: '#ffffff',
-                    cornerRadius: 8,
-                    displayColors: false,
-                    callbacks: {
-                        label: function(context) {
-                            return `$${context.parsed.y}B USD`;
-                        }
-                    }
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    ticks: {
-                        callback: function(value) {
-                            return '$' + value + 'B';
-                        },
-                        color: '#4b5563'
-                    },
-                    grid: {
-                        color: 'rgba(0, 0, 0, 0.1)'
-                    }
-                },
-                x: {
-                    ticks: {
-                        color: '#4b5563'
-                    },
-                    grid: {
-                        display: false
-                    }
-                }
-            },
-            animation: {
-                duration: 2000,
-                easing: 'easeInOutQuart'
-            }
-        }
-    });
-}
+
 
 function populateServices() {
     const servicesGrid = document.getElementById('servicesGrid');
@@ -438,6 +361,35 @@ Context: ${ragContext}`
         if (typingIndicator) {
             typingIndicator.remove();
         }
+    }
+}
+
+function initializeMobileMenu() {
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const navMenu = document.getElementById('navMenu');
+    
+    if (mobileMenuToggle && navMenu) {
+        mobileMenuToggle.addEventListener('click', function() {
+            mobileMenuToggle.classList.toggle('active');
+            navMenu.classList.toggle('mobile-active');
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = navMenu.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenuToggle.classList.remove('active');
+                navMenu.classList.remove('mobile-active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!mobileMenuToggle.contains(event.target) && !navMenu.contains(event.target)) {
+                mobileMenuToggle.classList.remove('active');
+                navMenu.classList.remove('mobile-active');
+            }
+        });
     }
 }
 

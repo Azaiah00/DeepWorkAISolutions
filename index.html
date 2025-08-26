@@ -8,7 +8,6 @@
     <meta name="keywords" content="AI Strategy, AI Automation, AI Consulting, Business Intelligence, Custom AI Solutions">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="primary-font">
     <header class="header">
@@ -16,7 +15,12 @@
             <div class="nav-brand">
                 <h1>DeepWork AI Solutions</h1>
             </div>
-            <ul class="nav-menu">
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="#opportunity" class="nav-link">Opportunity</a></li>
                 <li><a href="#services" class="nav-link">Services</a></li>
                 <li><a href="#pricing" class="nav-link">Pricing</a></li>
@@ -50,28 +54,8 @@
         <section id="opportunity" class="opportunity-section">
             <div class="container">
                 <h2 class="section-title">The AI Opportunity is Now</h2>
-                <p class="section-subtitle">The SME market is experiencing explosive growth in AI adoption. Don't get left behind.</p>
-                
-                <div class="opportunity-content">
-                    <div class="chart-container">
-                        <canvas id="marketChart"></canvas>
-                        <p class="chart-caption">AI Market Growth in SME Sector (USD Billions)</p>
-                    </div>
-                    
-                    <div class="opportunity-stats">
-                        <div class="stat-card">
-                            <h3>461%</h3>
-                            <p>Expected Growth by 2032</p>
-                        </div>
-                        <div class="stat-card">
-                            <h3>85%</h3>
-                            <p>Of SMEs Still Haven't Adopted AI</p>
-                        </div>
-                        <div class="stat-card">
-                            <h3>3x</h3>
-                            <p>Average ROI in First Year</p>
-                        </div>
-                    </div>
+                <div class="opportunity-simple">
+                    <p class="opportunity-text">The SME AI market is growing from <span class="highlight-red">$8.75B in 2024</span> to <span class="highlight-red">$49.11B by 2032</span> — a <span class="highlight-red">461% growth</span>. Yet <span class="highlight-red">85% of SMEs</span> still haven't adopted AI, creating massive opportunity for early adopters to gain competitive advantage.</p>
                 </div>
             </div>
         </section>
