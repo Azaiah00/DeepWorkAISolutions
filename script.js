@@ -364,6 +364,13 @@ Context: ${ragContext}`
     }
 }
 
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
 function initializeMobileMenu() {
     const mobileMenuToggle = document.getElementById('mobileMenuToggle');
     const navMenu = document.getElementById('navMenu');
