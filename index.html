@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepWork AI Solutions - AI Strategy & Automation for SMEs</title>
+    <meta name="description" content="Simplify AI for your business. Expert AI strategy, automation, and custom solutions that drive tangible ROI for small and mid-sized businesses.">
+    <meta name="keywords" content="AI Strategy, AI Automation, AI Consulting, Business Intelligence, Custom AI Solutions">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="primary-font">
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>DeepWork AI Solutions</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#opportunity" class="nav-link">Opportunity</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                <li><a href="#technology" class="nav-link">Technology</a></li>
+                <li><a href="#contact" class="nav-link cta-button">Get Started</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Transform Your Business with AI That Actually Works</h1>
+                    <p class="hero-subtitle">We simplify AI for small and mid-sized businesses by providing targeted, high-impact solutions that drive tangible business outcomes.</p>
+                    <div class="hero-cta">
+                        <a href="#contact" class="cta-button primary">Start Your AI Journey</a>
+                        <a href="#services" class="cta-button secondary">Explore Services</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="ai-graphic">
+                        <i class="fas fa-brain"></i>
+                        <i class="fas fa-cogs"></i>
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="opportunity" class="opportunity-section">
+            <div class="container">
+                <h2 class="section-title">The AI Opportunity is Now</h2>
+                <p class="section-subtitle">The SME market is experiencing explosive growth in AI adoption. Don't get left behind.</p>
+                
+                <div class="opportunity-content">
+                    <div class="chart-container">
+                        <canvas id="marketChart"></canvas>
+                        <p class="chart-caption">AI Market Growth in SME Sector (USD Billions)</p>
+                    </div>
+                    
+                    <div class="opportunity-stats">
+                        <div class="stat-card">
+                            <h3>461%</h3>
+                            <p>Expected Growth by 2032</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>85%</h3>
+                            <p>Of SMEs Still Haven't Adopted AI</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>3x</h3>
+                            <p>Average ROI in First Year</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services-section">
+            <div class="container">
+                <h2 class="section-title">Our Core Services</h2>
+                <p class="section-subtitle">Comprehensive AI solutions designed for maximum impact</p>
+                
+                <div class="services-grid" id="servicesGrid">
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="pricing-section">
+            <div class="container">
+                <h2 class="section-title">Transparent, Scalable Pricing</h2>
+                <p class="section-subtitle">Choose the right solution for your business size and needs</p>
+                
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Starter AI Implementation</h3>
+                            <div class="price">$5,000 - $20,000</div>
+                            <p class="pricing-model">Fixed Fee Project</p>
+                        </div>
+                        <div class="pricing-features">
+                            <p class="value-prop">Automate one core process or launch a custom chatbot. Fast, predictable ROI.</p>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Single process automation</li>
+                                <li><i class="fas fa-check"></i> Custom chatbot development</li>
+                                <li><i class="fas fa-check"></i> AI marketing funnel setup</li>
+                                <li><i class="fas fa-check"></i> 30-day implementation</li>
+                                <li><i class="fas fa-check"></i> Training & documentation</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-target">Best for: Small Businesses, Startups</div>
+                    </div>
+
+                    <div class="pricing-card featured">
+                        <div class="pricing-header">
+                            <h3>Advanced AI Integration</h3>
+                            <div class="price">$20,000 - $100,000+</div>
+                            <p class="pricing-model">Project-Based/Tiered</p>
+                        </div>
+                        <div class="pricing-features">
+                            <p class="value-prop">Comprehensive AI strategy, solution design, and implementation across multiple departments.</p>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Multi-department integration</li>
+                                <li><i class="fas fa-check"></i> Custom AI model development</li>
+                                <li><i class="fas fa-check"></i> Advanced marketing automation</li>
+                                <li><i class="fas fa-check"></i> Strategic consulting</li>
+                                <li><i class="fas fa-check"></i> Ongoing optimization</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-target">Best for: Mid-sized Businesses</div>
+                    </div>
+
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>DeepWork Managed Retainer</h3>
+                            <div class="price">$5,000 - $15,000<span>/month</span></div>
+                            <p class="pricing-model">Monthly Retainer</p>
+                        </div>
+                        <div class="pricing-features">
+                            <p class="value-prop">Ongoing support, model optimization, and strategic advisory to ensure continuous growth.</p>
+                            <ul>
+                                <li><i class="fas fa-check"></i> 24/7 monitoring & support</li>
+                                <li><i class="fas fa-check"></i> Monthly strategy reviews</li>
+                                <li><i class="fas fa-check"></i> Performance optimization</li>
+                                <li><i class="fas fa-check"></i> Priority feature updates</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-target">Best for: All Clients</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="technology" class="technology-section">
+            <div class="container">
+                <h2 class="section-title">Our Technology Stack</h2>
+                <p class="section-subtitle">Demonstrating our technical expertise through automated systems and custom AI architecture</p>
+                
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>Automated Lead Management</h3>
+                        <p>Our backend automatically captures, processes, and routes leads through intelligent workflows, ensuring no opportunity is missed while providing instant response times.</p>
+                    </div>
+
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Custom RAG Chatbot</h3>
+                        <p>Advanced Retrieval-Augmented Generation architecture that provides accurate, context-aware responses based on our proprietary knowledge base, demonstrating our AI capabilities.</p>
+                    </div>
+
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Scalable AI Infrastructure</h3>
+                        <p>Cloud-native architecture designed for rapid scaling, with automated monitoring, performance optimization, and seamless integration capabilities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials-section">
+            <div class="container">
+                <h2 class="section-title">Trusted by Forward-Thinking Businesses</h2>
+                
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"DeepWork AI transformed our customer service. Response times dropped 80% and satisfaction scores hit all-time highs."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <strong>Sarah Chen</strong>
+                            <span>CEO, TechFlow Solutions</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"The AI strategy roadmap they created saved us months of trial and error. ROI was clear within 6 weeks."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <strong>Marcus Rodriguez</strong>
+                            <span>Operations Director, GrowthCorp</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Finally, AI that actually works for our business. The automation freed up 20 hours per week for strategic work."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <strong>Jennifer Walsh</strong>
+                            <span>Founder, InnovateLab</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="client-logos">
+                    <div class="logo-placeholder">TechFlow</div>
+                    <div class="logo-placeholder">GrowthCorp</div>
+                    <div class="logo-placeholder">InnovateLab</div>
+                    <div class="logo-placeholder">DataSync</div>
+                    <div class="logo-placeholder">AutomateNow</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="ai-consultation-tool">
+                            <h2><i class="fas fa-brain"></i> AI Solution Finder</h2>
+                            <p>Describe your business challenge and get an instant AI solution recommendation powered by our expertise.</p>
+                            
+                            <div class="consultation-form">
+                                <div class="form-group">
+                                    <label for="businessType">What type of business are you in?</label>
+                                    <input type="text" id="businessType" placeholder="e.g., E-commerce, Manufacturing, Healthcare, Professional Services...">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="businessProblem">What's your biggest business challenge or time-consuming process?</label>
+                                    <textarea id="businessProblem" rows="4" placeholder="Describe what takes too much time, causes bottlenecks, or where you see opportunities for improvement..."></textarea>
+                                </div>
+                                
+                                <button class="cta-button primary" id="getRecommendation">
+                                    <i class="fas fa-magic"></i> Get My AI Solution
+                                </button>
+                                
+                                <div class="recommendation-result" id="recommendationResult">
+                                    <div class="recommendation-header">
+                                        <i class="fas fa-lightbulb"></i>
+                                        <h4>Your Personalized AI Recommendation</h4>
+                                    </div>
+                                    <div class="recommendation-content" id="recommendationContent"></div>
+                                    <div class="recommendation-footer">
+                                        <p><strong>Ready to implement this solution?</strong></p>
+                                        <p>Fill out the form on the right to get your free consultation!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-benefits">
+                            <div class="benefit-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Free 30-minute strategy consultation</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Custom AI opportunity assessment</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>ROI projection and implementation roadmap</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Business Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company Name *</label>
+                            <input type="text" id="company" name="company" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="employees">Company Size</label>
+                            <select id="employees" name="employees">
+                                <option value="">Select size</option>
+                                <option value="1-10">1-10 employees</option>
+                                <option value="11-50">11-50 employees</option>
+                                <option value="51-200">51-200 employees</option>
+                                <option value="200+">200+ employees</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="interests">Primary Interest</label>
+                            <select id="interests" name="interests">
+                                <option value="">Select primary interest</option>
+                                <option value="strategy">AI Strategy & Roadmapping</option>
+                                <option value="automation">Intelligent Automation</option>
+                                <option value="custom">Custom AI Solutions</option>
+                                <option value="managed">Managed AI Services</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Tell us about your biggest business challenge</label>
+                            <textarea id="message" name="message" rows="4" placeholder="What process takes too much time? Where do you see the biggest opportunity for improvement?"></textarea>
+                        </div>
+
+                        <button type="submit" class="cta-button primary">Get Your Free Consultation</button>
+                        
+                        <div class="form-status" id="formStatus"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>DeepWork AI Solutions</h3>
+                    <p>Simplifying AI for small and mid-sized businesses with targeted, high-impact solutions that drive tangible business outcomes.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="#services">AI Strategy</a></li>
+                            <li><a href="#services">Automation</a></li>
+                            <li><a href="#services">Custom Solutions</a></li>
+                            <li><a href="#services">Managed Services</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#opportunity">Market Opportunity</a></li>
+                            <li><a href="#technology">Technology</a></li>
+                            <li><a href="#pricing">Pricing</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DeepWork AI Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="chatbot-widget" id="chatbotWidget">
+        <div class="chatbot-toggle" id="chatbotToggle">
+            <i class="fas fa-comments"></i>
+        </div>
+        
+        <div class="chatbot-container" id="chatbotContainer">
+            <div class="chatbot-header">
+                <h4>AI Assistant</h4>
+                <p>Ask me anything about our services</p>
+                <button class="chatbot-close" id="chatbotClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot-message">
+                    <p>Hello! I'm your AI assistant. I can help you learn about DeepWork AI Solutions' services, pricing, and how we can transform your business with AI. What would you like to know?</p>
+                </div>
+            </div>
+            
+            <div class="chatbot-input">
+                <input type="text" id="chatbotInput" placeholder="Type your question...">
+                <button id="chatbotSend">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
