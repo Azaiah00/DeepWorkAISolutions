@@ -5,34 +5,46 @@ const marketData = {
 
 const servicesData = [
     {
-        title: 'AI Strategy & Roadmapping',
-        icon: 'fas fa-route',
-        shortDescription: 'We define a clear, actionable AI strategy aligned with your business goals, ensuring every investment delivers maximum impact.',
-        longDescription: 'Our strategic process begins with a deep dive into your operations, market position, and objectives. We identify high-value opportunities for AI implementation, create a phased roadmap, and establish key performance indicators (KPIs) to measure success, de-risking your investment and providing a clear path forward.'
-    },
-    {
-        title: 'Intelligent Automation & Workflow Optimization',
-        icon: 'fas fa-cogs',
-        shortDescription: 'We automate repetitive tasks and optimize complex workflows, freeing your team to focus on high-value, strategic work.',
-        longDescription: 'From back-office processes to customer service interactions, we deploy AI agents to handle routine tasks with speed and accuracy. This reduces operational costs, minimizes human error, and dramatically improves efficiency across your organization.'
+        title: 'Website & Systems Design',
+        icon: 'fas fa-laptop-code',
+        shortDescription: 'Purpose-driven design and development, infused with AI-enabled features to streamline business operations and drive growth.',
+        longDescription: 'From custom CRM integrations to intuitive user experiences, our solutions lay the groundwork for scalable growth. We combine advanced SEO with AI models and smart optimization tactics to capture high-value traffic and reinforce your online authority.',
+        page: 'websites.html'
     },
     {
         title: 'AI-Powered Marketing & Advertising',
         icon: 'fas fa-bullhorn',
         shortDescription: 'Transform your marketing with AI-driven campaigns, automated funnels, and intelligent customer journey optimization that maximizes ROI.',
-        longDescription: 'Our comprehensive marketing automation combines AI-powered ad targeting, custom landing pages, CRM integration, and multi-channel nurturing workflows. From awareness to conversion, we create seamless customer experiences that drive measurable results and sustainable growth.'
+        longDescription: 'Our comprehensive marketing automation combines AI-powered ad targeting, custom landing pages, CRM integration, and multi-channel nurturing workflows. From awareness to conversion, we create seamless customer experiences that drive measurable results and sustainable growth.',
+        page: 'marketing.html'
+    },
+    {
+        title: 'AI Strategy & Roadmapping',
+        icon: 'fas fa-route',
+        shortDescription: 'We define a clear, actionable AI strategy aligned with your business goals, ensuring every investment delivers maximum impact.',
+        longDescription: 'Our strategic process begins with a deep dive into your operations, market position, and objectives. We identify high-value opportunities for AI implementation, create a phased roadmap, and establish key performance indicators (KPIs) to measure success, de-risking your investment and providing a clear path forward.',
+        page: 'ai-strategy.html'
+    },
+    {
+        title: 'Intelligent Automation & Workflow Optimization',
+        icon: 'fas fa-cogs',
+        shortDescription: 'We automate repetitive tasks and optimize complex workflows, freeing your team to focus on high-value, strategic work.',
+        longDescription: 'From back-office processes to customer service interactions, we deploy AI agents to handle routine tasks with speed and accuracy. This reduces operational costs, minimizes human error, and dramatically improves efficiency across your organization.',
+        page: 'automation.html'
     },
     {
         title: 'Custom AI Solutions & Agent Development',
         icon: 'fas fa-robot',
         shortDescription: 'We design and build bespoke AI models and agents tailored to solve your unique business challenges and create a competitive edge.',
-        longDescription: 'When off-the-shelf solutions aren\'t enough, we develop custom AI systems from the ground up. This includes everything from predictive analytics models to sophisticated AI agents that can perform complex, multi-step tasks, giving you a powerful, proprietary asset.'
+        longDescription: 'When off-the-shelf solutions aren\'t enough, we develop custom AI systems from the ground up. This includes everything from predictive analytics models to sophisticated AI agents that can perform complex, multi-step tasks, giving you a powerful, proprietary asset.',
+        page: 'custom-ai.html'
     },
     {
         title: 'AI Integration & Managed Services',
         icon: 'fas fa-wrench',
         shortDescription: 'We ensure your AI solutions are seamlessly integrated, continuously optimized, and expertly managed for long-term success.',
-        longDescription: 'Deployment is just the beginning. Our managed services provide ongoing monitoring, maintenance, and performance tuning for your AI systems. We act as your long-term AI partner, ensuring your solutions evolve with your business and continue to deliver value.'
+        longDescription: 'Deployment is just the beginning. Our managed services provide ongoing monitoring, maintenance, and performance tuning for your AI systems. We act as your long-term AI partner, ensuring your solutions evolve with your business and continue to deliver value.',
+        page: 'managed-services.html'
     }
 ];
 
@@ -102,6 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeChatbot();
     initializeAIConsultation();
     initializeMobileMenu();
+    initializePricingToggle();
 });
 
 
@@ -113,36 +126,20 @@ function populateServices() {
         const serviceCard = document.createElement('div');
         serviceCard.className = 'service-card fade-in';
         
-        // Special handling for AI Marketing service (index 2)
-        if (index === 2) {
-            serviceCard.innerHTML = `
-                <i class="${service.icon} service-icon"></i>
-                <h3>${service.title}</h3>
-                <div class="service-description">
-                    <p class="service-short">${service.shortDescription}</p>
-                    <div class="service-long" id="service-long-${index}">
-                        <p>${service.longDescription}</p>
-                    </div>
-                    <span class="service-toggle" onclick="window.location.href='marketing.html'">
-                        Learn More
-                    </span>
+        // All services now link to their dedicated pages
+        serviceCard.innerHTML = `
+            <i class="${service.icon} service-icon"></i>
+            <h3>${service.title}</h3>
+            <div class="service-description">
+                <p class="service-short">${service.shortDescription}</p>
+                <div class="service-long" id="service-long-${index}">
+                    <p>${service.longDescription}</p>
                 </div>
-            `;
-        } else {
-            serviceCard.innerHTML = `
-                <i class="${service.icon} service-icon"></i>
-                <h3>${service.title}</h3>
-                <div class="service-description">
-                    <p class="service-short">${service.shortDescription}</p>
-                    <div class="service-long" id="service-long-${index}">
-                        <p>${service.longDescription}</p>
-                    </div>
-                    <span class="service-toggle" onclick="toggleServiceDescription(${index})">
-                        Learn More
-                    </span>
-                </div>
-            `;
-        }
+                <span class="service-toggle" onclick="window.location.href='${service.page}'">
+                    Learn More
+                </span>
+            </div>
+        `;
         
         servicesGrid.appendChild(serviceCard);
     });
@@ -369,6 +366,27 @@ function scrollToTop() {
         top: 0,
         behavior: 'smooth'
     });
+}
+
+function initializePricingToggle() {
+    const pricingToggle = document.getElementById('pricingToggle');
+    
+    if (pricingToggle) {
+        pricingToggle.addEventListener('change', function() {
+            const monthlyPrices = document.querySelectorAll('.monthly-price');
+            const yearlyPrices = document.querySelectorAll('.yearly-price');
+            
+            if (this.checked) {
+                // Show yearly prices
+                monthlyPrices.forEach(price => price.style.display = 'none');
+                yearlyPrices.forEach(price => price.style.display = 'inline');
+            } else {
+                // Show monthly prices
+                monthlyPrices.forEach(price => price.style.display = 'inline');
+                yearlyPrices.forEach(price => price.style.display = 'none');
+            }
+        });
+    }
 }
 
 function initializeMobileMenu() {

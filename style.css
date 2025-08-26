@@ -801,15 +801,19 @@ body::before {
     display: block;
 }
 
-.service-card:nth-child(1) .service-icon {
-    color: var(--primary-red);
-}
-
 .service-card:nth-child(2) .service-icon {
     color: var(--primary-skyblue);
 }
 
-.service-card:nth-child(3) {
+.service-card:nth-child(3) .service-icon {
+    color: var(--primary-black);
+}
+
+.service-card:nth-child(4) .service-icon {
+    color: var(--primary-red);
+}
+
+.service-card:nth-child(1) {
     position: relative;
     border: 2px solid rgba(220, 38, 38, 0.3);
     background: rgba(255, 255, 255, 0.4);
@@ -820,8 +824,8 @@ body::before {
         inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
-.service-card:nth-child(3)::before {
-    content: "Featured Service";
+.service-card:nth-child(1)::before {
+    content: "Most Popular";
     position: absolute;
     top: -12px;
     left: 50%;
@@ -847,18 +851,18 @@ body::before {
     }
 }
 
-.service-card:nth-child(3) .service-icon {
+.service-card:nth-child(1) .service-icon {
     color: var(--primary-red);
     font-size: 3.5rem;
     filter: drop-shadow(0 4px 8px rgba(220, 38, 38, 0.2));
 }
 
-.service-card:nth-child(3) h3 {
+.service-card:nth-child(1) h3 {
     color: var(--primary-red);
     font-size: 1.7rem;
 }
 
-.service-card:nth-child(3):hover {
+.service-card:nth-child(1):hover {
     transform: scale(1.05) translateY(-8px);
     box-shadow: 
         0 20px 60px rgba(220, 38, 38, 0.2),
@@ -866,11 +870,11 @@ body::before {
         inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
-.service-card:nth-child(4) .service-icon {
+.service-card:nth-child(5) .service-icon {
     color: var(--primary-skyblue);
 }
 
-.service-card:nth-child(5) .service-icon {
+.service-card:nth-child(6) .service-icon {
     color: var(--primary-black);
 }
 
@@ -918,6 +922,103 @@ body::before {
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     z-index: -1;
+}
+
+/* Pricing Toggle */
+.pricing-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.toggle-label {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 3px;
+    bottom: 3px;
+    background: linear-gradient(135deg, var(--primary-red) 0%, #b91c1c 100%);
+    transition: 0.3s ease;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3);
+}
+
+input:checked + .toggle-slider {
+    background: rgba(220, 38, 38, 0.1);
+}
+
+input:checked + .toggle-slider:before {
+    transform: translateX(30px);
+}
+
+.save-badge {
+    background: linear-gradient(135deg, var(--primary-red) 0%, #b91c1c 100%);
+    color: var(--white);
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-left: 0.5rem;
+}
+
+/* Pricing Display */
+.yearly-price {
+    display: none;
+}
+
+.pricing-note {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.pricing-note p {
+    color: var(--text-medium);
+    margin: 0;
+}
+
+.pricing-note i {
+    color: var(--primary-red);
+    margin-right: 0.5rem;
 }
 
 .pricing-grid {
@@ -1808,19 +1909,19 @@ body::before {
         margin-bottom: 1rem;
     }
 
-    .service-card:nth-child(3) {
+    .service-card:nth-child(1) {
         transform: scale(1);
     }
 
-    .service-card:nth-child(3) .service-icon {
+    .service-card:nth-child(1) .service-icon {
         font-size: 2.8rem;
     }
 
-    .service-card:nth-child(3) h3 {
+    .service-card:nth-child(1) h3 {
         font-size: 1.3rem;
     }
 
-    .service-card:nth-child(3)::before {
+    .service-card:nth-child(1)::before {
         font-size: 0.7rem;
         padding: 0.3rem 0.7rem;
         top: -8px;
@@ -2022,7 +2123,7 @@ body::before {
         gap: 1.5rem;
     }
 
-    .service-card:nth-child(3) {
+    .service-card:nth-child(1) {
         grid-column: 1 / -1;
         max-width: 600px;
         margin: 0 auto;
@@ -2088,7 +2189,7 @@ body::before {
         gap: 2rem;
     }
 
-    .service-card:nth-child(3) {
+    .service-card:nth-child(1) {
         grid-column: 1 / -1;
         max-width: 700px;
         margin: 0 auto;
